@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Full viewport layout */
+.sweep-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Left half */
+.left {
+  background-color: #faebf2;
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+
+.right {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.right::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('images/landing_page_hands.jpg');
+  background-size: cover; /* <-- Fill the section */
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 0;
+}
+
+/* SVG curve */
+.curve {
+  position: absolute;
+  top: 0;
+  left: 23%;
+  width: 50vw;
+  height: 100vh;
+  z-index: 1;
+  pointer-events: none;
+  transform: scaleX(-1);
+}
+
+/* Content (text and logo) */
+.left-content {
+  position: relative;
+  z-index: 2; /* On top of SVG */
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.landing-text {
+  font-size: 30pt;
+  font-family: "Comfortaa", sans-serif;
+  margin-top: 25%;
+  color: #2b2b2b;
+}
+
+.logo {
+  margin-top: 5%;
+  width: 150%;
+  max-width: 100%;
+  height: auto;
+}
+
+.parallax-one {
+  background-image: url(images/sweet_pea_1.jpg);
+  min-height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.cardSection {
+  background-color: #EFE1E1;
+  height: 100vh;
+  text-align: center;
+  font-size: 30pt;
+  margin: 0;
+}
+
+.three-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: stretch;
+}
+
+
+.card-one, .card-two, .card-three {
+  border: black solid;
+  border-radius: 30px;
+  text-align: center;
+  margin: 5%;
+  filter: drop-shadow(8px 8px 10px gray);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  justify-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-one:hover,
+.card-two:hover,
+.card-three:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.card-one {
+  background-color: #CC9E9E;
+}
+
+.card-two {
+  background-color: #9CB6A6;
+}
+
+.card-three {
+  background-color: #9E9ECC;
+}
+
+.card-header {
+  font-family: "Comfortaa", sans-serif;
+  font-size: 30pt;
+  margin-bottom: 3%;
+  padding-top: 3%;
+}
+
+.card-text {
+  font-family: "lato", sans-serif;
+  font-size: 24pt;
+  text-align: left;
+  margin: 3%;
+}
+
+.sweet-pea-image {
+  width: 30%;
+  height: auto;
+  align-self: end;
+}
+
+.button-text {
+  margin-top: 3%;
+  margin-bottom: 3%;
+  font-family: "lato", sans-serif;
+  font-size: 24pt;
+}
+
+.form-button {
+  height: 50px;
+  width: 173px;
+  font-family: "lato", sans-serif;
+  font-size: 20pt;
+  background-color:#BFD9E3;
+  border-radius: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.parallax-two {
+  background-image: url(images/sweet_pea_2.jpg);
+  min-height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
