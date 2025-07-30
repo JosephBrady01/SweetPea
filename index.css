@@ -198,3 +198,149 @@ html, body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.services-section {
+  background-color: #EFE1E1;
+}
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;/* instead of stretch */
+}
+
+section.booking-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  flex: 1 1 300px;
+  max-width: 300px;
+  position: relative;
+  width: 300px;
+  margin: 20px;
+  border-radius: 0px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  color: #0a4870;
+  transition: 0.3s;
+}
+
+section.booking-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(10, 72, 112, 0);
+  transition: 0.3s;
+}
+
+.book-container {
+  height: 100;
+}
+
+section.booking-card:hover .book-container .content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.informations-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  background: #f0f0f0;
+  transform: translateY(206px);
+  transition: 0.3s;
+   min-height: 350px; /* or adjust as needed */
+}
+
+section.booking-card:hover .informations-container {
+  transform: translateY(0);
+}
+
+.icon-top {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.card-icon {
+  padding-top: 10%;
+  height: auto;
+  width: 50%;
+  object-fit: contain;
+}
+
+.title {
+  font-size: 24pt;
+  font-weight: bold;
+  margin-bottom: 10px;
+  position: relative;
+  padding-bottom: 10px;
+  font-family: "Comfortaa", sans-serif;
+}
+
+.title::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  margin: auto;
+  width: 50px;
+  height: 3px;
+}
+
+.sub-title {
+  font-size: 14pt;
+  min-height: 2.5em;
+  text-align: center;
+  margin-bottom: 0.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.price {
+  font-size: 13pt;
+  color: red;
+  min-height: 1.8em;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.more-information {
+  opacity: 0;
+  transition: 0.3s;
+  
+}
+
+section.booking-card:hover .more-information {
+  opacity: 1;
+}
+
+
+
+.box {
+  flex: 1;
+  background:#EFE1E1;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
+.info { 
+  color:black; 
+}
+
+.disclaimer {
+  margin-top: 20px;
+  font-size: 0.8em;
+  color: #7d7d7d;
+}
