@@ -26,7 +26,7 @@ html, body {
 
 /* Left half */
 .left {
-  background-color: #faebf2;
+  background-color: #EFE1E1;
   position: relative;
   height: 100%;
   overflow: hidden;
@@ -201,146 +201,262 @@ html, body {
 
 .services-section {
   background-color: #EFE1E1;
+  text-align: center;
+  align-items: center;
+  height: 50vh;
+  padding-bottom: 30%;
 }
 
-ul {
+.cards-wrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: stretch;/* instead of stretch */
+  gap: 2%;
+  padding: 2%;
 }
 
-section.booking-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: stretch;
-  flex: 1 1 300px;
-  max-width: 300px;
-  position: relative;
-  width: 300px;
-  margin: 20px;
-  border-radius: 0px;
-  overflow: hidden;
-  background-size: cover;
-  background-position: center;
+.booking-card {
+  width: 23%;
+  padding: 2%;
+  border-radius: 10px;
+  background: #fdfdfd;
   text-align: center;
-  color: #0a4870;
-  transition: 0.3s;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1;
+  position: relative;
 }
 
-section.booking-card::before {
-  content: '';
+.booking-card::before {
+  content: "";
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(10, 72, 112, 0);
-  transition: 0.3s;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.4); /* soft white overlay */
+  z-index: 0; /* sits behind the content but above ::before */
+  pointer-events: none;
+  border-radius: 10px;
 }
 
-.book-container {
-  height: 100;
+.booking-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
-section.booking-card:hover .book-container .content {
-  opacity: 1;
-  transform: translateY(0);
+.booking-card button {
+  padding: 0.5em 1em;
+  border: 2px solid #0a4870;
+  background: white;
+  color: #0a4870;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+  border-radius: 5px;
 }
 
-.informations-container {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 20px;
-  background: #f0f0f0;
-  transform: translateY(206px);
-  transition: 0.3s;
-   min-height: 350px; /* or adjust as needed */
-}
-
-section.booking-card:hover .informations-container {
-  transform: translateY(0);
-}
-
-.icon-top {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 10px;
-}
-
-.card-icon {
-  padding-top: 10%;
-  height: auto;
-  width: 50%;
-  object-fit: contain;
+.booking-card button:hover {
+  transform: scale(1.1);
+  background: #e3ebf1;
 }
 
 .title {
-  font-size: 24pt;
-  font-weight: bold;
-  margin-bottom: 10px;
-  position: relative;
-  padding-bottom: 10px;
   font-family: "Comfortaa", sans-serif;
-}
-
-.title::after {
-  content: '';
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  margin: auto;
-  width: 50px;
-  height: 3px;
+  font-size: 30pt;
+  color: #0a4870;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .sub-title {
-  font-size: 14pt;
-  min-height: 2.5em;
-  text-align: center;
-  margin-bottom: 0.5em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  font-family: "Lato", sans-serif;
+  font-size: 12pt;
+  margin: 0.5em 0;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .price {
-  font-size: 13pt;
+  font-family: "Lato", sans-serif;
+  font-size: 12pt;
   color: red;
-  min-height: 1.8em;
-  text-align: center;
-  display: flex;
-  align-items: center;
+  margin-bottom: 1em;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.6);
+  z-index: 999;
   justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease;
+  text-align: center;
 }
 
-
-.more-information {
-  opacity: 0;
-  transition: 0.3s;
-  
+.card-description {
+  font-family: "lato", sans-serif;
+  word-break: break-all;
+  margin-bottom: 5%;
+  font-size: 17pt;
 }
 
-section.booking-card:hover .more-information {
-  opacity: 1;
+.card-list {
+  font-family: "Lato", sans-serif;
+  font-size: 16pt;
+  margin: 0.5em 0;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-
-
-.box {
-  flex: 1;
-  background:#EFE1E1;
-  padding: 15px;
-  border-radius: 10px;
-  font-size: 0.9em;
-  font-weight: bold;
+.modal-content {
+  background: white;
+  border-radius: 20px;
+  padding: 2em;
+  max-width: 90%;
+  max-height: 80%;
+  overflow-y: auto;
+  position: relative;
+  animation: slideUp 0.3s ease;
 }
 
-.info { 
-  color:black; 
+.modal-list li {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1%;
+  gap: 0.3em; /* this replaces margin */
 }
 
-.disclaimer {
-  margin-top: 20px;
-  font-size: 0.8em;
-  color: #7d7d7d;
+.modal-text {
+  font-family: "Lato", sans-serif;
+  font-size: 16pt;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  word-break: break-all;
+}
+
+.close-modal {
+  position: absolute;
+  top: 1em; right: 1em;
+  font-size: 1.5em;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
+.parallax-three {
+  background-image: url(images/sweet_pea_3.jpg);
+  min-height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.about-us {
+  background-color: #EFE1E1;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-us-content {
+  position: relative;
+  z-index: 2; /* On top of SVG */
+  width: 100%;
+  max-width: 60%;
+  height: 100vh;
+  margin: 0 auto;
+  top: 50%;
+  transform: translateY(-50%);
+  word-break: break-all;
+}
+
+.about-us-image {
+  border-radius: 30px;
+  margin-bottom: 3%;
+  width: 100%;
+}
+
+.about-us-text {
+ font-family: "Lato", sans-serif;
+  font-size: 18pt;
+  word-break: break-word;
+  white-space: normal; /* wrap lines inside <pre> */
+  max-width: 100%;
+  text-align: left;
+}
+
+.about-us-right {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.about-us-right::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('images/about_us_sweet_pea.jpg');
+  background-size: cover; /* <-- Fill the section */
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 0;
+}
+
+.about-us-curve {
+  position: absolute;
+  top: 0;
+  left: 23%;
+  width: 50vw;
+  height: 100vh;
+  z-index: 1;
+  pointer-events: none;
+  transform: scaleX(-1);
+}
+
+.parallax-four {
+  background-image: url(images/sweet_pea_4.jpg);
+  min-height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.contact-form {
+  background-color: #EFE1E1;
+  text-align: center;
+}
+
+.form-info {
+  font-family: "Lato", sans-serif;
+  font-weight: normal;
+  font-size: 20pt;
+}
+
+.form-card-outer {
+  background-color: #DDEDE0;
+  stroke: black;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.form-card-inner {
+  background-color: #9E9ECC ;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
