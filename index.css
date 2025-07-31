@@ -13,7 +13,6 @@ html, body {
   height: 100%;
   overflow-x: hidden;
   scroll-behavior: smooth;
-  background-color: #EFE1E1;
 }
 
 .dropdown-nav {
@@ -167,6 +166,7 @@ html, body {
   text-align: center;
   font-size: 30pt;
   margin: 0;
+  margin-bottom: 0;
 }
 
 .card-container,
@@ -639,7 +639,7 @@ button[type="submit"]:hover {
 .services-section,
 .about-us,
 .contact-form {
-  margin-bottom: 3rem;
+  margin-bottom: 0;
   padding-bottom: 2rem;
   padding-top: 2rem;
 }
