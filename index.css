@@ -607,10 +607,10 @@ button[type="submit"]:hover {
 
 @media screen and (max-width: 768px) {
 
-    .parallax-section {
+    .parallax-one, .parallax-two, .parallax-three, .parallax-four  {
     background-attachment: scroll; /* Disables fixed parallax */
   }
-  
+
   /* 1. Landing page: hide image and SVG */
   .right,
   .curve {
