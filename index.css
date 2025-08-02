@@ -512,6 +512,7 @@ html, body {
 
 /* Section background and header */
 .contact-form {
+  margin: 0;
   background-color: #EFE1E1;
   padding: 4rem 2rem;
   text-align: center;
@@ -519,7 +520,6 @@ html, body {
   flex-direction: column;
   align-items: center;
   height: 100vh;
-  margin: 0;
 }
 
 .card-header {
