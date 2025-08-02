@@ -312,7 +312,6 @@ html, body {
 }
 
 .booking-card button {
-  padding: 0.5em 1em;
   border: 2px solid #0a4870;
   background: white;
   color: #0a4870;
@@ -320,6 +319,7 @@ html, body {
   cursor: pointer;
   transition: transform 0.3s ease, background 0.3s ease;
   border-radius: 5px;
+  margin-top: -3%;
 }
 
 .booking-card button:hover {
@@ -731,6 +731,11 @@ button[type="submit"]:hover {
     padding: 1rem;
   }
 
+  .form-class-inner {
+    align-items: center;
+    margin-left: 2.5%;
+  }
+
   .form-info {
     font-size: 16pt;
   }
@@ -739,4 +744,21 @@ button[type="submit"]:hover {
     font-size: 1rem;
     width: 100%;
   }
+
+  .modal {
+    width: 95%;
+  }
+
+  .modal-content {
+    word-wrap: break-word;
+  }
+
+  .modal-text li {
+    font-size: 0.100%;
+  }
+
+  .close-modal {
+    margin-left: 5%;
+  }
+
 }
