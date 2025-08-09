@@ -1,9 +1,23 @@
   const toggle = document.querySelector(".nav-toggle");
   const nav = document.querySelector(".dropdown-nav");
 
-  toggle.addEventListener("click", () => {
-    nav.classList.toggle("open");
-  });
+
+toggle.addEventListener("click", (e) => {
+  e.stopPropagation();
+  nav.classList.toggle("open");
+});
+
+// Close nav when clicking outside
+document.addEventListener("click", (e) => {
+  if (nav.classList.contains("open") && !nav.contains(e.target)) {
+    nav.classList.remove("open");
+  }
+});
+
+// Optional: close on menu link click
+document.querySelectorAll(".nav-list a").forEach(link => {
+  link.addEventListener("click", () => nav.classList.remove("open"));
+});
     
     document.querySelectorAll('.open-modal').forEach(button => {
       button.addEventListener('click', () => {
