@@ -464,7 +464,8 @@ html, body {
  font-family: "Lato", sans-serif;
   font-size: 16pt;
   word-break: break-word;
-  white-space: normal; /* wrap lines inside <pre> */
+  white-space: pre-wrap
+; /* wrap lines inside <pre> */
   max-width: 100%;
   text-align: left;
 }
@@ -608,7 +609,7 @@ button[type="submit"]:hover {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
 
     .parallax-one, .parallax-two, .parallax-three, .parallax-four  {
     background-attachment: scroll; /* Disables fixed parallax */
@@ -690,9 +691,27 @@ button[type="submit"]:hover {
   /* 4. Modal resize */
   .modal-content {
     max-width: 90%;
-    max-height: 80vh;
-    font-size: 1rem;
+    max-height: none;
+    overflow-y: visible;
+    font-size: clamp(14px, 3vw, 10px);
     padding: 1rem;
+  }
+
+  .title {
+    font-size: clamp(18px, 5vw, 26px); /* scales between mobile and tablet sizes */
+    line-height: 1.2; /* keep it compact */
+    word-break: keep-all; /* prevent breaking words mid-way */
+    text-align: center;
+  }
+}
+
+  .modal-text,
+  .card-description,
+  .card-list {
+    font-size: clamp(12px, 2.5vw, 15px);
+    line-height: 1.4; /* better readability */
+    word-break: normal; /* avoid breaking words mid-letter */
+    white-space: normal; /* let text wrap properly */
   }
 
   .modal-list .modal-text {
