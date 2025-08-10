@@ -240,7 +240,7 @@ html, body {
 }
 
 .button-text {
-  margin-top: 3%;
+  margin-top: 1%;
   margin-bottom: 3%;
   font-family: "lato", sans-serif;
   font-size: 24pt;
@@ -251,6 +251,7 @@ html, body {
   width: 173px;
   font-family: "lato", sans-serif;
   font-size: 20pt;
+  margin-top: 1%;
   background-color:#BFD9E3;
   border-radius: 30px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -613,7 +614,13 @@ button[type="submit"]:hover {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-@media screen and (max-width: 900px) {
+
+  .form-button {
+    font-size: 16pt;
+    padding: 0.5em 1em; /* shrink padding for small height */
+  }
+
+@media screen and (max-width: 900px), screen and (max-height: 999px)  {
 
     .parallax-one, .parallax-two, .parallax-three, .parallax-four  {
     background-attachment: scroll; /* Disables fixed parallax */
@@ -741,8 +748,14 @@ button[type="submit"]:hover {
   }
 
   .about-us-text {
-    font-size: 14pt;
+    font-size: 70;
   }
+
+  .about-us-image {
+  border-radius: 30px;
+  margin-bottom: 3%;
+  width: 80%;
+}
 
   /* 6. Contact form fit and resize */
   .contact-form {
