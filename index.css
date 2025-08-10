@@ -621,7 +621,7 @@ button[type="submit"]:hover {
     padding: 0.5em 1em; /* shrink padding for small height */
   }
 
-@media screen and (max-width: 954px), screen and (max-height: 999px)  {
+@media screen and (max-width: 954px), screen and (max-height: 1025px)  {
 
     .parallax-one, .parallax-two, .parallax-three, .parallax-four  {
     background-attachment: scroll; /* Disables fixed parallax */
