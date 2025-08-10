@@ -165,7 +165,7 @@ html, body {
 
 .cardSection {
   background-color: #EFE1E1;
-  height: 100vh;
+  height: 108vh;
   text-align: center;
   font-size: 30pt;
   margin: 0;
@@ -251,7 +251,8 @@ html, body {
   width: 173px;
   font-family: "lato", sans-serif;
   font-size: 20pt;
-  margin-top: 1%;
+  margin-bottom: 1%;
+  margin-bottom: 2%;
   background-color:#BFD9E3;
   border-radius: 30px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -620,7 +621,7 @@ button[type="submit"]:hover {
     padding: 0.5em 1em; /* shrink padding for small height */
   }
 
-@media screen and (max-width: 900px), screen and (max-height: 999px)  {
+@media screen and (max-width: 954px), screen and (max-height: 999px)  {
 
     .parallax-one, .parallax-two, .parallax-three, .parallax-four  {
     background-attachment: scroll; /* Disables fixed parallax */
