@@ -37,3 +37,31 @@ document.querySelectorAll(".nav-list a").forEach(link => {
         if (e.target === modal) modal.style.display = 'none';
       });
     });
+
+    // Helper: send a GA4 event if gtag is ready
+const gaEvent = (name, params = {}) => window.gtag && gtag('event', name, params);
+
+// A) “Get in Touch” button clicks
+document.querySelectorAll('.form-button').forEach(btn => {
+  btn.addEventListener('click', () => gaEvent('get_in_touch_click', { location: 'card_section' }));
+});
+
+// B) Service modal opens
+document.querySelectorAll('.open-modal').forEach(button => {
+  button.addEventListener('click', () => {
+    gaEvent('modal_open', { modal_id: button.dataset.modalId || 'unknown' });
+  });
+});
+
+// C) Enquiry form submit attempt (Web3Forms)
+const form = document.querySelector('form[action="https://api.web3forms.com/submit"]');
+if (form) {
+  form.addEventListener('submit', () => gaEvent('form_submit_attempt'));
+}
+
+// A) Turn on debug for the whole session
+gtag('config', 'G-3TVNTPGJME', { debug_mode: true });
+
+// B) Or send a single debug event
+gtag('event', 'debug_ping', { debug_mode: true, source: 'console' });
+
