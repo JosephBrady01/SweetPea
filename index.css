@@ -621,6 +621,68 @@ button[type="submit"]:hover {
     padding: 0.5em 1em; /* shrink padding for small height */
   }
 
+.footer-links {
+  background-color: #DDEDE0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 3rem;
+  padding: 2rem 1rem;
+  flex-wrap: wrap;
+}
+
+.link-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #3d3b4f;
+  font-family: "Lato", sans-serif;
+  font-size: 1.4rem;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  padding-bottom: 1rem;
+  cursor: pointer;
+}
+
+.link-item span {
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.link-item span::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background-color: #9E9ECC;
+  margin: 0.3rem auto 0;
+  transition: opacity 0.3s;
+}
+
+.link-item i {
+  font-size: 3rem;
+  transition: all 0.3s ease-in-out;
+  z-index: 2;
+}
+
+.link-item:hover span {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
+.link-item:hover i {
+  transform: scale(1.4);
+  color: #9E9ECC;
+}
+
+.link-item:hover span::after {
+  opacity: 0;
+}
+
+
+
 @media screen and (max-width: 954px), screen and (max-height: 1025px)  {
 
     .parallax-one, .parallax-two, .parallax-three, .parallax-four  {
@@ -800,4 +862,25 @@ button[type="submit"]:hover {
     margin-left: 5%;
   }
 
+    .footer-links {
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1.5rem 0.5rem;
+    gap: 1.2rem;
+  }
+
+  .link-item {
+    font-size: 0;
+  }
+
+  .link-item span {
+    display: none;
+  }
+
+  .link-item i {
+    font-size: 3.5rem;
+  }
 }
+
+
