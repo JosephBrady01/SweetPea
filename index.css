@@ -154,6 +154,25 @@ html, body {
   height: auto;
 }
 
+.contact-button {
+  height: 50px;
+  width: 70%;
+  font-family: "Lato", sans-serif;
+  font-size: clamp(1rem, 2.5vw, 1.5rem); /* responsive text size */
+  margin-bottom: 2%;
+  background-color: #BFD9E3;
+  border-radius: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+
+.contact-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
 .parallax-one {
   background-image: url(images/sweet_pea_1.jpg);
   min-height: 500px;
